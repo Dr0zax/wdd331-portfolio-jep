@@ -1,0 +1,44 @@
+/* Temple list component: .temples, .temple-name, .temple-status
+   Style the status badges differently based on class (.open, .construction). */
+
+/* TODO: Style the temple list */
+
+.temples {
+   border: 1px solid black;
+   overflow: hidden;
+   border-radius: var(--radius-sm);
+   margin-top: var(--space-md);
+
+   li {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: var(--space-md);
+      background: var(--color-surface);
+
+      .temple-name {
+         align-self: center;
+         font-weight: bold;
+      }
+
+      .temple-status {
+         /* font-size: calc(var(--base-size) * 0.5); */
+         padding: calc(var(--space-sm) * 0.5);
+         border-radius: var(--radius-sm);
+      }
+
+      &:nth-child(even) {
+         background: var(--color-background);
+      }
+   }
+}
+
+.open {
+   background: rgb(170, 255, 213);
+   color: rgb(27, 87, 56);
+}
+
+.construction {
+   background: rgb(255, 170, 170);
+   color: rgb(87, 27, 27);
+}
