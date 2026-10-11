@@ -1,0 +1,32 @@
+.assingments-container {
+    h2 {
+        color: var(--color-primary);
+    }
+    
+    ul {
+        display: grid;
+        gap: var(--space-sm);
+        list-style: none;
+    }
+    
+    li {
+        border-top: 1px solid var(--color-border);
+    }
+    
+    a {
+        align-items: center;
+        color: var(--color-text);
+        display: flex;
+        gap: var(--space-md);
+        justify-content: space-between;
+        padding: 1rem 0;
+        text-decoration: none;
+        transition: color 180ms ease, padding 180ms ease;
+    }
+    
+    a:hover {
+        color: var(--color-primary-hover);
+        padding-left: 0.5rem;
+    }
+}
+
