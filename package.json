@@ -1,0 +1,28 @@
+{
+  "name": "wdd331-portfolio-jep",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "postcss css/main.css --output dist/styles.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.25.0",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@11.25.0",
+  "type": "module",
+  "devDependencies": {
+    "cssnano": "^9.5.0",
+    "postcss": "^8.5.29",
+    "postcss-cli": "^12.0.0",
+    "postcss-import": "^17.0.0"
+  }
+}
