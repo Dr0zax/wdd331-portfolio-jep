@@ -27,7 +27,9 @@ main > p + p {
 }
 
 .introduction {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: var(--space-lg);
     margin-top: var(--space-lg);
 }
@@ -40,21 +42,4 @@ main > p + p {
     gap: var(--space-lg);
     margin-top: var(--space-lg);
     padding: clamp(1.5rem, 4vw, 3rem);
-}
-
-@media (min-width: 700px) {
-    main {
-        grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.8fr);
-        grid-template-rows: auto auto 1fr;
-    }
-
-    main > h1,
-    main > p {
-        grid-column: 1;
-    }
-
-    .assingments-container {
-        grid-column: 2;
-        grid-row: 1 / span 3;
-    }
 }
