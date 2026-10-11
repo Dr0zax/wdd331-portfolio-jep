@@ -3,6 +3,10 @@
     color: var(--color-bg);
 }
 
+.align-center {
+    text-align: center;
+}
+
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,

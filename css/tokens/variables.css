@@ -12,4 +12,5 @@
     --radius-sm: 0.5rem;
     --radius-lg: 1.5rem;
     --shadow-card: 0 1.5rem 4rem rgb(2 6 23 / 0.28);
+    --base-size: 16px;
 }
