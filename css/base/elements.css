@@ -1,0 +1,38 @@
+body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+h1,
+h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.045em;
+}
+
+h1 {
+    font-size: clamp(3.5rem, 10vw, 7.75rem);
+    line-height: 0.95;
+    max-width: 9ch;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1;
+}
+
+p {
+    color: var(--color-muted);
+    max-width: 42rem;
+}
+
+a {
+    color: inherit;
+}
+
+a:focus-visible {
+    outline: 0.2rem solid var(--color-primary-hover);
+    outline-offset: 0.3rem;
+}
