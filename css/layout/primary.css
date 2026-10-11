@@ -38,7 +38,8 @@ main > p + p {
     /* align-self: start; */
     background: var(--color-surface);
     border-radius: var(--radius-lg);
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: var(--space-lg);
     margin-top: var(--space-lg);
     padding: clamp(1.5rem, 4vw, 3rem);
