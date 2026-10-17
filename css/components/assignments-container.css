@@ -1,4 +1,4 @@
-.assingments-container {
+.assignments-container {
     h2 {
         color: var(--color-primary);
     }
@@ -15,7 +15,7 @@
     
     a {
         align-items: center;
-        color: var(--color-text);
+        color: var(--color-link);
         display: flex;
         gap: var(--space-md);
         justify-content: space-between;
@@ -25,7 +25,7 @@
     }
     
     a:hover {
-        color: var(--color-primary-hover);
+        color: var(--color-link-hover);
     }
 }
 

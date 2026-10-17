@@ -1,12 +1,82 @@
-:root {
-    --color-primary: #3C6E71;
-    --color-primary-dark: #284B63;
-    --color-primary-hover: #278388;
-    --color-background: #eeeeee;
-    --color-surface: #ffffff;
-    --color-text: #353535;
-    --color-muted: #62737e;
-    --color-accent: #62737e;
-    --color-border: #D9D9D9;
+:root, html {
+    color-scheme: light;
+
+    /* ---- Original palette ---- */
+    --seed-primary: #3C6E71;
+    --seed-primary-dark: #1e262c;
+    --seed-primary-hover: #278388;
+    --seed-bg: #eeeeee;
+    --seed-surface: #ffffff;
+    --seed-text: #353535;
+    --seed-text-muted: #62737e;
+    --seed-accent: #62737e;
+    --seed-border: #D9D9D9;
+    --seed-border-strong: var(--seed-primary-dark);
+
+
+     /* ---- Accent ramp ---- */
+    --accent-200: color-mix(in oklch, var(--seed-primary) 30%, white);
+    --accent-300: color-mix(in oklch, var(--seed-primary) 50%, white);
+    --accent-400: color-mix(in oklch, var(--seed-primary) 75%, white);
+    --accent-500: var(--seed-primary);
+    --accent-600: var(--seed-primary-hover);
+    --accent-700: var(--seed-primary-dark);
+    --accent-800: color-mix(in oklch, var(--seed-primary-dark) 80%, black);
+
+      /* ---- Semantic tokens ---- */
+    --color-bg: light-dark(var(--seed-bg), var(--seed-primary-dark));
+    --color-surface: light-dark(var(--seed-surface), var(--seed-primary));
+    --color-text: light-dark(var(--seed-text), var(--seed-bg));
+    --color-text-muted: light-dark(var(--seed-text-muted), var(--seed-border));
+    --color-accent: light-dark(var(--seed-accent), var(--seed-border));
+    --color-accent-hover: light-dark(var(--seed-primary-hover), var(--seed-primary-hover));
+    --color-link: light-dark(var(--seed-primary), var(--seed-bg));
+    --color-link-hover: light-dark(var(--seed-primary-hover), var(--seed-border));
+    --color-border: light-dark(var(--seed-border), var(--seed-text-muted));
+    --color-border-strong: light-dark(var(--seed-border-strong), var(--seed-border));
+
+    /* Legacy names retained for the existing components. */
+    --color-primary: var(--color-link);
+    --color-primary-dark: var(--seed-primary-dark);
+    --color-primary-hover: var(--color-link-hover);
+    --color-background: var(--color-bg);
+    --color-muted: var(--color-text-muted);
+
+    /* Tint the native checkboxes, radios, and range sliders */
+    accent-color: var(--color-accent);
+
+    /* ---- Header chrome ---- */
+    --header-bg: light-dark(var(--seed-primary), var(--seed-primary-dark));
+    --header-text: light-dark(#ffffff, #f0f4f8);
+
+    /* ---- Theme toggle (consumed by theme-toggle.css) ---- */
+    --theme-toggle-bg: color-mix(in srgb, var(--header-text) 20%, var(--header-bg));
+    --theme-toggle-border: color-mix(in srgb, var(--header-text) 40%, var(--header-bg));
+    --theme-toggle-bg-hover: color-mix(in srgb, var(--header-text) 30%, var(--header-bg));
+    --theme-toggle-border-hover: color-mix(in srgb, var(--header-text) 55%, var(--header-bg));
+
+    /* ---- Shadows ---- */
+    --shadow-color: light-dark(rgb(0 0 0 / 0.09), rgb(0 0 0 / 0.28));
+    --shadow-sm: 0 1px 2px 0 var(--shadow-color);
+    --shadow-md: 0 1px 3px 0 var(--shadow-color);
 }
 
+html:has(input[name='theme-preference'][value='dark']:checked) {
+    color-scheme: dark;
+}
+
+html:has(input[name='theme-preference'][value='light']:checked) {
+    color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+    html:has(input[name='theme-preference'][value='system']:checked) {
+        color-scheme: dark;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    html:has(input[name='theme-preference'][value='system']:checked) {
+        color-scheme: light;
+    }
+}

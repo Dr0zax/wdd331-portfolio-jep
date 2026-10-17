@@ -34,8 +34,7 @@ main > p + p {
     margin-top: var(--space-lg);
 }
 
-.assingments-container {
-    /* align-self: start; */
+.assignments-container {
     background: var(--color-surface);
     border-radius: var(--radius-lg);
     display: flex;

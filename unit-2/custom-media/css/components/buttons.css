@@ -1,0 +1,24 @@
+/* Button components: .btn, .primary, .secondary, disabled state
+   Use native nesting for pseudo-classes and modifiers. */
+
+/* TODO: Style the button components */
+.btn {
+   border: none;
+   padding: var(--space-sm);
+   border-radius: var(--radius-sm);
+   font-family: var(--font-family);
+   transition: .1s ease box-shadow;
+   
+   &:hover:not([disabled]) {
+      box-shadow: 0 5px 10px rgba(38, 50, 56, 0.24);
+   }
+}
+
+.primary {
+   background: var(--color-accent);
+   color: var(--color-text);
+}
+
+.secondary {
+   background: var(--color-accent);
+}
