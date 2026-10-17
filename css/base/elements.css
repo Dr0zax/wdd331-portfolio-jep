@@ -1,5 +1,5 @@
 body {
-    background: var(--color-background);
+    background: var(--color-bg);
     color: var(--color-text);
     font-family: var(--font-body);
     line-height: 1.6;
@@ -24,7 +24,7 @@ h2 {
 }
 
 p {
-    color: var(--color-muted);
+    color: var(--color-text-muted);
     max-width: 42rem;
 }
 
@@ -33,6 +33,6 @@ a {
 }
 
 a:focus-visible {
-    outline: 0.2rem solid var(--color-primary-hover);
+    outline: 0.2rem solid var(--color-accent-hover);
     outline-offset: 0.3rem;
 }

@@ -1,0 +1,16 @@
+/* Non-color tokens: spacing, typography, borders, shadows.
+   These values should be referenced by every other layer. */
+:root {
+    /* TODO: Define spacing, font, radius, and shadow tokens here */
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+
+    --font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    --base-size: 16px;
+
+    --radius: 12px;
+    --radius-sm: 6px;
+}
