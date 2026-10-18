@@ -19,6 +19,17 @@
     border: 0;
 }
 
+.text-center {
+    text-align: center;
+}
+
+[disabled] {
+   &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+   }
+}
+
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,

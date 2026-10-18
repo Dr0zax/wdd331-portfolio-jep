@@ -1,11 +1,2 @@
-/* Color tokens: define all color values for the site.
-   Name by purpose (--color-primary, --color-surface)
-   not appearance (--blue, --light-gray). */
-:root {
-    /* TODO: Define color tokens here */
-    --color-primary: #1F7A8C;
-    --color-background: #F1F3F9;
-    --color-surface: #fff;
-    --color-text: #022b3a;
-    --color-accent: #7FB8F0;
-}
+/* Shared tokens are maintained at the site root. */
+@import url('../../../../css/tokens/colors.css');

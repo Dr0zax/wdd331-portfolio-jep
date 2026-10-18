@@ -37,7 +37,7 @@
 
     /* Legacy names retained for the existing components. */
     --color-primary: var(--color-link);
-    --color-primary-dark: var(--seed-primary-dark);
+    --color-primary-dark: #284B63;
     --color-primary-hover: var(--color-link-hover);
     --color-background: var(--color-bg);
     --color-muted: var(--color-text-muted);

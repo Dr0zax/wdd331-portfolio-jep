@@ -7,10 +7,10 @@
    padding: var(--space-sm);
    border-radius: var(--radius-sm);
    font-family: var(--font-family);
-   transition: .1s ease box-shadow;
+   transition: var(--transition-fast) box-shadow;
    
    &:hover:not([disabled]) {
-      box-shadow: 0 5px 10px rgba(38, 50, 56, 0.24);
+      box-shadow: var(--shadow-button);
    }
 }
 
