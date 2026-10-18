@@ -10,6 +10,8 @@ This repository contains my portfolio for WDD 331R: Advanced CSS. The home page 
 
 The site is deployed automatically to GitHub Pages from the `main` branch. The GitHub Actions workflow publishes the repository contents to the `website` branch.
 
+now supports dark mode
+
 ## Project structure
 
 ```text
@@ -24,6 +26,8 @@ The site is deployed automatically to GitHub Pages from the `main` branch. The G
 │   └── utilities/                # Small, single-purpose utility classes
 ├── dist/
 │   └── styles.css                # Generated, bundled, minified stylesheet
+├── js/
+│   └── theme-preferences.js      # Theme persistence across the site  
 ├── unit-1/
 │   └── custom-properties/        # Custom properties and nesting assignment
 ├── unit-2/
