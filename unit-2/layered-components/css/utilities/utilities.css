@@ -4,13 +4,4 @@
 
 /* TODO: Add any utility classes you find useful */
 
-.text-center {
-    text-align: center;
-}
-
-[disabled] {
-   &:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-   }
-}
+@import url('../../../css/utilities/utilities.css') layer(utilities);

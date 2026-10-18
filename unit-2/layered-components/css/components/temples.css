@@ -14,7 +14,8 @@
       flex-direction: row;
       justify-content: space-between;
       padding: var(--space-md);
-      background: var(--color-surface);
+      background: oklch(from var(--color-bg) calc(l + 0.15) c h);
+      
 
       .temple-name {
          align-self: center;
@@ -28,7 +29,7 @@
       }
 
       &:nth-child(even) {
-         background: var(--color-background);
+         background: var(--color-bg);
       }
    }
 }

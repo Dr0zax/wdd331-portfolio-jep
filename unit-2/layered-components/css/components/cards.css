@@ -8,7 +8,6 @@
 
    h2 {
       margin-bottom: var(--space-lg);
-      color: var(--color-primary-dark);
       font-size: 1.5rem;
       font-weight: 700;
    }
@@ -36,7 +35,7 @@
       align-self: flex-start;
       margin-bottom: var(--space-md);
       padding: 0.3rem 0.7rem;
-      color: var(--color-text);
+      color: var(--color-surface);
       background: var(--color-accent);
       font-size: 0.75rem;
       text-transform: uppercase;
