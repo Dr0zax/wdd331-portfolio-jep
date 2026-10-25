@@ -1,0 +1,334 @@
+#visual-effects {
+    section {
+        width: 100%;
+        padding-top: var(--space-lg);
+        border-top: 1px solid var(--color-border);
+         
+        h2 {
+            text-align: center;
+        }
+    }
+
+    nav {
+        max-width: 75vw;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--space-sm);
+
+        ul {
+            display: flex;
+            gap: 1rem;
+            li {
+                list-style: none;
+                transition: transform 250ms ease;
+            }
+
+            li:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .hero {
+        isolation: isolate;
+        position: relative;
+        display: grid;
+        min-height: clamp(24rem, 62vh, 38rem);
+        margin: 0 auto;
+        overflow: hidden;
+        color: #ffffff;
+        background: var(--seed-primary-dark);
+    }
+
+    .hero::after {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        content: '';
+        background: var(--hero-gradient-vignette);
+        pointer-events: none;
+    }
+
+    .hero-image {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .hero-content {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        align-self: end;
+        justify-self: center;
+        max-width: 42rem;
+        padding: clamp(2rem, 7vw, 5rem);
+        text-shadow: var(--hero-text-shadow)
+    }
+
+    .hero h1 {
+        max-width: 10ch;
+        margin: 0;
+        color: inherit;
+        font-size: clamp(3rem, 9vw, 7rem);
+        line-height: 0.94;
+    }
+
+    .hero p {
+        max-width: 34rem;
+        margin: var(--space-lg) 0 0;
+        color: rgb(255 255 255 / 0.88);
+        font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+        line-height: 1.4;
+    }
+
+    .card-section h2 {
+        margin-bottom: var(--space-lg);
+    }
+
+    .cards {
+        display: flex;
+        gap: var(--space-md);
+    }
+
+    .card {
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+        padding: 0.5rem;
+        background-color: var(--color-surface);
+        box-shadow: var(--hero-shadow-lg);
+        filter: grayscale(1);
+        transition: transform var(--transition-base), filter var(--transition-base);
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        filter: grayscale(0);
+    }
+
+    .card-image {
+        object-fit: cover;
+        width: 100%;
+        height: 200px;
+    }
+
+    .glass-section {
+        isolation: isolate;
+        position: relative;
+        display: grid;
+        place-items: center;
+        min-height: clamp(20rem, 45vw, 30rem);
+        overflow: hidden;
+    }
+
+    .glass-background {
+        position: absolute;
+        inset: var(--space-lg) 0 0;
+        z-index: -1;
+        overflow: hidden;
+        border-radius: var(--radius-sm);
+        background: var(--color-surface);
+    }
+
+    .glass-bg-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .glass-panel {
+        position: relative;
+        z-index: 1;
+        width: min(60ch, calc(100% - (var(--space-lg) * 2)));
+        max-width: 60ch;
+        margin: var(--space-lg);
+        border-radius: var(--radius-sm);
+        background: light-dark(oklch(1 0 0 / 0.4), oklch(0.2 0 0 / 0.4));
+        backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+        -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+        box-shadow: var(--shadow-md);
+        padding: var(--space-md);
+        overflow-wrap: anywhere;
+    }
+
+    .glass-panel > p {
+        color: var(--color-text);
+    }
+    
+    .icon-section h2 {
+        margin-bottom: var(--space-sm);
+    }
+    
+    .icon-section > p {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .icon-row {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: var(--space-lg);
+        align-items: center;
+        justify-items: center;
+        margin-top: var(--space-xl);
+        padding: clamp(1.25rem, 4vw, 2rem);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        background-color: var(--color-surface);
+    }
+
+    .icon-item {
+        width: clamp(2.5rem, 8vw, 4rem);
+        aspect-ratio: 1;
+        padding: var(--space-sm);
+        border-radius: 50%;
+        filter: drop-shadow(0 0.45rem 0.35rem rgb(0 0 0 / 0.2));
+    }
+
+    .blend-section > p {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .blend-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-md);
+        margin-top: var(--space-lg);
+    }
+
+    .blend-card {
+        overflow: hidden;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-sm);
+        background: var(--color-surface);
+        box-shadow: var(--shadow-sm);
+        transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .blend-card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-0.25rem);
+    }
+
+    .blend-swatch {
+        display: grid;
+        min-height: 13rem;
+        place-items: center;
+        padding: var(--space-md);
+        background-position: center;
+        background-size: cover;
+        color: #ffffff;
+        text-shadow: 0 0.1em 0.5em rgb(0 0 0 / 0.55);
+    }
+
+    .blend-swatch span {
+        font-family: var(--font-display);
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+    }
+
+    .blend-multiply {
+        background-image:
+            linear-gradient(135deg, #f59e0b, #7c3aed),
+            url('https://picsum.photos/seed/blend-multiply/600/400');
+        background-blend-mode: multiply;
+    }
+
+    .blend-screen {
+        background-image:
+            linear-gradient(135deg, #0ea5e9, #f472b6),
+            url('https://picsum.photos/seed/blend-screen/600/400');
+        background-blend-mode: screen;
+    }
+
+    .blend-difference {
+        background-image:
+            linear-gradient(135deg, #22c55e, #fb7185),
+            url('https://picsum.photos/seed/blend-difference/600/400');
+        background-blend-mode: difference;
+    }
+
+    .blend-copy {
+        display: grid;
+        gap: var(--space-sm);
+        padding: var(--space-md);
+    }
+
+    .blend-copy h3 {
+        color: var(--color-text);
+        font-size: 1.25rem;
+    }
+
+    .blend-copy p {
+        font-size: 0.95rem;
+    }
+
+    .blend-copy code {
+        color: var(--color-primary);
+        font: 0.75rem var(--font-family-mono);
+        overflow-wrap: anywhere;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .icon-item {
+            transition: none;
+        }
+    }
+
+    @media (max-width: 40rem) {
+        .hero {
+            min-height: 18rem;
+        }
+
+        .hero::after {
+            background: var(--hero-gradient-vignette)
+        }
+
+        .hero-content {
+            padding: var(--space-lg);
+        }
+
+        .cards {
+            flex-direction: column;
+        }
+
+        .glass-section {
+            min-height: 24rem;
+            padding-top: var(--space-md);
+        }
+
+        .glass-background {
+            inset: var(--space-md) 0 0;
+        }
+
+        .glass-panel {
+            width: calc(100% - (var(--space-md) * 2));
+            margin: var(--space-md);
+            padding: var(--space-md);
+        }
+
+        .icon-row {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: var(--space-lg) var(--space-md);
+            margin-top: var(--space-lg);
+        }
+
+        .blend-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .blend-swatch {
+            min-height: 11rem;
+        }
+    }
+}
+
+
+
