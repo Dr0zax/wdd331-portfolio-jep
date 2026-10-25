@@ -81,4 +81,5 @@ This reads `css/main.css` and writes the bundled, minified result to `dist/style
 
 - [Home](index.html)
 - [Custom Properties and Nesting](unit-1/custom-properties/index.html)
+- [Blend Modes Teaching Demo](unit-3/blend-modes-demo/index.html)
 - [Layered Components](unit-2/layered-components/index.html)
