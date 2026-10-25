@@ -8,6 +8,7 @@
 
 @import url('layout/primary.css') layer(layout);
 
+@import url('components/effects.css') layer(components);
 @import url('components/assignments-container.css') layer(components);
 @import url('components/theme-toggle.css') layer(components);
 

@@ -43,4 +43,13 @@
     --transition-fast: 0.1s ease;
     --base-size: 16px;
     --content-width: 72rem;
+
+
+    --glass-blur: 10px;
+    --glass-saturate: 2;
+    --hero-shadow-lg: 0 10px 10px rgba(0, 0, 0, 0.1);
+    --hero-text-shadow: 0 0.15em 0.8em rgb(0 0 0 / 0.4);
+    --hero-gradient-vignette: 
+            linear-gradient(90deg, rgb(4 15 18 / 0.82) 0%, rgb(4 15 18 / 0.48) 42%, rgb(4 15 18 / 0.12) 100%),
+            linear-gradient(0deg, rgb(4 15 18 / 0.52) 0%, transparent 48%);
 }
