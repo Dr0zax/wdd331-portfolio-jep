@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Interactive CSS blend modes teaching demo"
+        />
+        <title>Blend Modes</title>
+        <script type="module" src="../../js/theme-preferences.js"></script>
+        <link rel="stylesheet" href="css/main.css" />
+        <script type="module" src="script.js"></script>
+    </head>
+    <body>
+        <header class="site-header">
+            <a href="../../index.html">&larr; Home</a>
+            <details class="theme-menu">
+                <summary class="theme-control">
+                    <span class="visually-hidden">Color scheme</span>
+                </summary>
+                <div
+                    class="theme-extra"
+                    role="group"
+                    aria-label="Choose color scheme"
+                >
+                    <label
+                        class="theme-control theme-pick"
+                        data-theme-pick="light"
+                    >
+                        <input
+                            name="theme-preference"
+                            type="radio"
+                            value="light"
+                        />
+                        <span aria-hidden="true">&#9788;&#65039;</span>
+                        <span class="visually-hidden">Light</span>
+                    </label>
+                    <label
+                        class="theme-control theme-pick"
+                        data-theme-pick="system"
+                    >
+                        <input
+                            name="theme-preference"
+                            type="radio"
+                            value="system"
+                            checked
+                        />
+                        <span aria-hidden="true">&#9881;&#65039;</span>
+                        <span class="visually-hidden">System default</span>
+                    </label>
+                    <label
+                        class="theme-control theme-pick"
+                        data-theme-pick="dark"
+                    >
+                        <input
+                            name="theme-preference"
+                            type="radio"
+                            value="dark"
+                        />
+                        <span aria-hidden="true">&#127766;</span>
+                        <span class="visually-hidden">Dark</span>
+                    </label>
+                </div>
+            </details>
+        </header>
+        <main>
+            <section class="intro">
+                <h1>Blend modes</h1>
+            </section>
+            <section class="lab-card" aria-labelledby="comparison-title">
+                <div class="section-heading">
+                    <div>
+                        <h2 id="comparison-title">
+                            Blend a color into a scene
+                        </h2>
+                    </div>
+                </div>
+                <p class="section-copy">
+                    The color and the photo are two background layers on one
+                    element. Change the mode to change the math.
+                </p>
+                <div class="controls" aria-label="Background blend controls">
+                    <label
+                        >Mode<select id="background-mode">
+                            <option value="normal">normal</option>
+                            <option value="multiply" selected>multiply</option>
+                            <option value="screen">screen</option>
+                            <option value="overlay">overlay</option>
+                            <option value="darken">darken</option>
+                            <option value="lighten">lighten</option>
+                            <option value="color-dodge">color-dodge</option>
+                            <option value="color-burn">color-burn</option>
+                            <option value="hard-light">hard-light</option>
+                            <option value="soft-light">soft-light</option>
+                            <option value="difference">difference</option>
+                            <option value="exclusion">exclusion</option>
+                            <option value="hue">hue</option>
+                            <option value="saturation">saturation</option>
+                            <option value="color">color</option>
+                            <option value="luminosity">luminosity</option>
+                        </select></label
+                    ><label
+                        >Color<input
+                            id="wash-color"
+                            type="color"
+                            value="#ef8354" /></label
+                    ><button
+                        class="ghost-button"
+                        id="reset-background"
+                        type="button"
+                    >
+                        Reset example
+                    </button>
+                </div>
+                <div class="hero-stage" id="hero-stage" data-mode="multiply">
+                    <div class="hero-copy">
+                        <h3>This is <br>Some Text</h3>
+                        <p>Try different blending modes</p>
+                    </div>
+                    <div class="hero-code">
+                        <code
+                            >background-blend-mode:
+                            <strong id="background-value">multiply</strong
+                            >;</code
+                        >
+                    </div>
+                </div>
+            </section>
+            <section class="split-grid">
+                <article class="lab-card compact" aria-labelledby="mix-title">
+                    <div class="section-heading">
+                        <div>
+                            <h2 id="mix-title">Mix with what is behind</h2>
+                        </div>
+                    </div>
+                    <p class="section-copy">
+                        This card is an element sitting above a color field. The
+                        headline blends outward into the page behind it.
+                    </p>
+                    <div class="mix-stage" id="mix-stage">
+                        <p class="mix-text">EVEN<br />MORE<br />TEXT</p>
+                    </div>
+                    <div class="controls single-control">
+                        <label
+                            >Text blend mode<select id="text-mode">
+                                <option value="normal">normal</option>
+                                <option value="screen" selected>screen</option>
+                                <option value="multiply">multiply</option>
+                                <option value="difference">difference</option>
+                                <option value="overlay">overlay</option>
+                            </select></label
+                        >
+                    </div>
+                </article>
+                <article
+                    class="lab-card compact"
+                    aria-labelledby="isolation-title"
+                >
+                    <div class="section-heading">
+                        <div>
+                            <h2 id="isolation-title">
+                               Isolation
+                            </h2>
+                        </div>
+                    </div>
+                    <p class="section-copy">
+                        Toggle the boundary. Without it, the blended sticker
+                        reaches through the card and mixes with the page
+                        background too.
+                    </p>
+                    <div class="isolation-demo" id="isolation-demo">
+                        <div class="isolation-card">
+                            <span class="sticker">BLEND<br />HERE</span
+                            ><small id="isolation-value"
+                                >isolation: isolate;</small
+                            >
+                        </div>
+                    </div>
+                    <label class="switch-row"
+                        ><input
+                            id="isolation-toggle"
+                            type="checkbox"
+                            checked
+                        /><span class="switch"></span
+                        ><span>Keep the blend inside the card</span></label
+                    >
+                </article>
+            </section>
+        </main>
+    </body>
+</html>

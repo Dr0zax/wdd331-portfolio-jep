@@ -1,0 +1,18 @@
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: min(var(--content-width), calc(100% - 2 * var(--space-md)));
+    margin: 0 auto;
+    padding: var(--space-lg) 0;
+}
+
+.site-header > a {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.site-header .theme-menu {
+    margin: 0;
+}
