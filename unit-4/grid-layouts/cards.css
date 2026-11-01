@@ -1,0 +1,77 @@
+.articles-page {
+    background: var(--color-bg);
+}
+
+.articles-page > header,
+.articles-page > main {
+    max-width: 1500px;
+    padding: 0 var(--space-md) 0 var(--space-md);
+    margin-inline: auto;
+}
+
+.articles-page > header {
+    padding-block: var(--space-2xl) var(--space-xl);
+}
+
+.articles-page > header h1 {
+    margin-bottom: var(--space-sm);
+    color: var(--color-text);
+}
+
+.articles-page > header p {
+    font-size: var(--font-size-lg);
+}
+
+.articles-page .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: var(--space-lg);
+    padding-block: var(--space-lg) var(--space-2xl);
+}
+
+.articles-page .card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card-subtle);
+}
+
+.articles-page .card > div:first-child {
+    flex: 0 0 10rem;
+    background: var(--color-link);
+}
+
+.articles-page .card > div:last-child {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+}
+
+.articles-page .card h2 {
+    color: var(--color-text);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.articles-page .card p {
+    font-size: var(--font-size-md);
+}
+
+.articles-page .card a {
+    align-self: flex-start;
+    margin-top: auto;
+    color: var(--color-link);
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+}
+
+.articles-page .card a:hover,
+.articles-page .card a:focus-visible {
+    color: var(--color-link-hover);
+}
