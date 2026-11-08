@@ -1,0 +1,298 @@
+.cq-lab-page {
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+.cq-lab-header,
+.cq-lab-main {
+    width: min(100% - 2rem, 1400px);
+    margin-inline: auto;
+}
+.cq-lab-header {
+    padding-block: var(--space-xl) var(--space-lg);
+}
+.cq-lab-header__copy {
+    max-width: 48rem;
+    margin-top: var(--space-xl);
+}
+.cq-lab-header h1 {
+    margin-block: var(--space-sm);
+    color: var(--color-text);
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    letter-spacing: -0.05em;
+}
+.cq-lab-header p:not(.eyebrow) {
+    max-width: 40rem;
+    font-size: var(--font-size-lg);
+}
+.cq-lab-main {
+    padding-bottom: var(--space-2xl);
+}
+.lesson-intro,
+.demo-shell,
+.unit-reference,
+.recipe {
+    margin-top: var(--space-xl);
+}
+.lesson-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.8fr);
+    gap: var(--space-xl);
+    align-items: end;
+    padding-block: var(--space-lg);
+}
+.lesson-intro h2,
+.demo-shell h2,
+.unit-reference h2,
+.recipe h2 {
+    color: var(--color-text);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+}
+.lesson-intro p:last-child {
+    max-width: 38rem;
+    margin: 0;
+}
+.demo-shell {
+    display: grid;
+    grid-template-columns: minmax(16rem, 0.35fr) minmax(0, 1fr);
+    gap: var(--space-lg);
+}
+.demo-controls {
+    display: grid;
+    align-content: start;
+    gap: var(--space-sm);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+}
+.demo-controls h2 {
+    margin-bottom: var(--space-md);
+    font-size: 1.7rem;
+}
+.demo-controls label,
+.demo-controls legend {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+}
+.demo-controls output {
+    float: right;
+    color: var(--color-link);
+    font-family: var(--font-family-mono);
+}
+.demo-controls input[type="range"] {
+    width: 100%;
+    accent-color: var(--color-link);
+}
+.demo-controls fieldset {
+    display: grid;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+    padding: 0;
+    border: 0;
+}
+.theme-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+.theme-button {
+    padding: 0.55rem 0.75rem;
+    border-radius: 999px;
+    border: 1px pixel var(--color-border);
+    /* background: transparent; */
+    color: var(--color-text);
+    cursor: pointer;
+    font: inherit;
+    font-size: var(--font-size-sm);
+}
+.theme-button.is-selected {
+    border-color: var(--color-link);
+    background: var(--color-link);
+    color: var(--color-bg);
+}
+.control-hint {
+    margin-top: var(--space-md);
+    color: var(--color-muted);
+    font-size: var(--font-size-sm);
+}
+.stage-wrap {
+    display: grid;
+    place-items: center;
+    min-height: 34rem;
+    padding: var(--space-lg);
+    overflow: auto;
+    border-radius: var(--radius-lg);
+    background: color-mix(in srgb, var(--color-surface) 65%, transparent);
+}
+.unit-stage {
+    container-type: size;
+    container-name: lab-stage;
+    display: grid;
+    width: var(--stage-width);
+    min-width: 18rem;
+    height: var(--stage-height);
+    min-height: 17rem;
+    align-content: center;
+    padding: 3cqi;
+    border-radius: 2cqi;
+    background: var(--stage-bg, var(--color-bg));
+    transition:
+        width 0.15s ease,
+        height 0.15s ease,
+        background 0.2s ease;
+}
+.unit-card {
+    display: grid;
+    grid-template-columns: minmax(6rem, 28cqi) 1fr;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 1.5cqi;
+    background: var(--stage-card, var(--color-surface));
+    box-shadow: var(--shadow-card-subtle);
+}
+.unit-card__visual {
+    display: grid;
+    min-height: 16cqb;
+    place-items: center;
+    background: var(--stage-accent, var(--color-link));
+    color: var(--stage-bg, var(--color-bg));
+    font-family: var(--font-family-mono);
+    font-size: clamp(2rem, 12cqmin, 7rem);
+    font-weight: 800;
+}
+.unit-card__body {
+    display: grid;
+    align-content: center;
+    gap: 1.2cqi;
+    min-width: 0;
+    padding: 4cqi;
+}
+
+.unit-card h3 {
+    color: var(--stage-text, var(--color-text));
+    font-size: clamp(1.2rem, 4.6cqi, 3.2rem);
+    letter-spacing: -0.04em;
+}
+.unit-card p:not(.eyebrow) {
+    max-width: 48ch;
+    color: var(--stage-text, var(--color-text));
+    font-size: clamp(0.75rem, 1.7cqi, 1.1rem);
+}
+.unit-card a {
+    color: var(--stage-accent, var(--color-link));
+    font-size: clamp(0.7rem, 1.5cqi, 0.95rem);
+    font-weight: 700;
+}
+.stage-size {
+    margin: 1cqi 0 0;
+    color: var(--stage-text, var(--color-muted));
+    font-family: var(--font-family-mono);
+    font-size: clamp(0.6rem, 1.2cqi, 0.8rem);
+}
+.unit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+}
+.unit-grid article {
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+}
+.unit-grid code {
+    color: var(--color-link);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.unit-grid h3 {
+    margin-block: var(--space-sm) 0.25rem;
+    color: var(--color-text);
+}
+.unit-grid p {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: var(--font-size-sm);
+}
+.recipe {
+    display: grid;
+    grid-template-columns: minmax(15rem, 0.6fr) 1fr;
+    gap: var(--space-xl);
+    padding: var(--space-xl) 0;
+    border-block: 1px solid var(--color-border);
+}
+.recipe ol {
+    display: grid;
+    gap: var(--space-md);
+    margin: 0;
+    padding-left: 1.25rem;
+}
+.recipe li {
+    padding-left: 0.5rem;
+}
+.recipe code {
+    color: var(--color-link);
+    font-family: var(--font-family-mono);
+}
+
+/* Attribute selectors provide a broad browser fallback for the style-query demo. */
+.unit-stage[data-tone="warm"] {
+    --stage-bg: #fff3df;
+    --stage-card: #fffaf2;
+    --stage-accent: #c65d36;
+    --stage-border: #dfaa72;
+    --stage-text: #452519;
+}
+.unit-stage[data-tone="mono"] {
+    --stage-bg: #e7e7e3;
+    --stage-card: #f7f7f3;
+    --stage-accent: #292929;
+    --stage-border: #999;
+    --stage-text: #292929;
+}
+
+@container lab-stage style(--stage-tone: warm) {
+    .unit-stage {
+        --stage-bg: #fff3df;
+        --stage-card: #fffaf2;
+        --stage-accent: #c65d36;
+        --stage-border: #dfaa72;
+        --stage-text: #452519;
+    }
+}
+@container lab-stage style(--stage-tone: mono) {
+    .unit-stage {
+        --stage-bg: #e7e7e3;
+        --stage-card: #f7f7f3;
+        --stage-accent: #292929;
+        --stage-border: #999;
+        --stage-text: #292929;
+    }
+}
+@media (max-width: 850px) {
+    .demo-shell,
+    .lesson-intro,
+    .recipe {
+        grid-template-columns: 1fr;
+    }
+    .unit-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 560px) {
+    .unit-grid {
+        grid-template-columns: 1fr;
+    }
+    .stage-wrap {
+        min-height: 28rem;
+        padding-inline: 0.5rem;
+    }
+    .unit-stage {
+        min-width: 17rem;
+    }
+    .unit-card {
+        grid-template-columns: 1fr;
+    }
+    .unit-card__visual {
+        min-height: 7rem;
+    }
+}

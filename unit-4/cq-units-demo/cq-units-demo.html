@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Container Query Units Lab</title>
+        <script type="module" src="../../js/theme-preferences.js"></script>
+        <link rel="stylesheet" href="../../css/main.css" />
+        <link rel="stylesheet" href="cq-units-demo.css" />
+    </head>
+    <body class="cq-lab-page">
+        <header class="site-header cq-lab-header">
+            <a href="../../index.html">&larr; Home</a>
+            <div class="cq-lab-header__copy">
+                <h1>Container Query Units</h1>
+            </div>
+            <details class="theme-menu">
+                <summary class="theme-control"><span class="visually-hidden">Color scheme</span></summary>
+                <div class="theme-extra" role="group" aria-label="Choose color scheme">
+                    <label class="theme-control theme-pick" data-theme-pick="light"><input name="theme-preference" type="radio" value="light" /><span aria-hidden="true">☀️</span><span class="visually-hidden">Light</span></label>
+                    <label class="theme-control theme-pick" data-theme-pick="system"><input name="theme-preference" type="radio" value="system" checked /><span aria-hidden="true">⚙️</span><span class="visually-hidden">System default</span></label>
+                    <label class="theme-control theme-pick" data-theme-pick="dark"><input name="theme-preference" type="radio" value="dark" /><span aria-hidden="true">🌒</span><span class="visually-hidden">Dark</span></label>
+                </div>
+            </details>
+        </header>
+
+        <main class="cq-lab-main">
+            <section class="lesson-intro" aria-labelledby="lesson-title">
+                <div>
+                    <h2 id="lesson-title">A component can measure its context</h2>
+                </div>
+                <p>Viewport units ask “how big is the browser?” Container query units ask “how big is my container?” That difference makes reusable components much easier to place in sidebars, grids, and dashboards.</p>
+            </section>
+
+            <section class="demo-shell" aria-labelledby="demo-title">
+                <div class="demo-controls">
+                    <div>
+                        <h2 id="demo-title">Component playground</h2>
+                    </div>
+                    <label for="width-control">Container width <output id="width-output">72%</output></label>
+                    <input id="width-control" type="range" min="35" max="100" value="72" />
+                    <label for="height-control">Container height <output id="height-output">420px</output></label>
+                    <input id="height-control" type="range" min="280" max="560" value="420" step="10" />
+                    <fieldset>
+                        <legend>Style query theme</legend>
+                        <div class="theme-buttons">
+                            <button class="theme-button is-selected" type="button" data-tone="cool">Cool</button>
+                            <button class="theme-button" type="button" data-tone="warm">Warm</button>
+                            <button class="theme-button" type="button" data-tone="mono">Mono</button>
+                        </div>
+                    </fieldset>
+                    <p class="control-hint">The outer frame is resized with JavaScript. The card itself only uses CSS container units.</p>
+                </div>
+
+                <div class="stage-wrap">
+                    <div class="unit-stage" id="unit-stage" data-tone="cool" style="--stage-width: 72%; --stage-height: 420px; --stage-tone: cool;">
+                        <article class="unit-card">
+                            <div class="unit-card__visual" aria-hidden="true"><span>cq</span></div>
+                            <div class="unit-card__body">
+                                <h3>Designed by context</h3>
+                                <p>This heading uses <code>cqi</code>, the card padding uses <code>cqi</code>, and the visual uses <code>cqmin</code>. Put this card anywhere and it scales with its container.</p>
+                                <a href="#unit-reference">Read the unit map <span aria-hidden="true">↗</span></a>
+                            </div>
+                        </article>
+                        <p class="stage-size" aria-live="polite">Container: <strong id="stage-readout">72% × 420px</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="unit-reference" id="unit-reference" aria-labelledby="reference-title">
+                <div class="unit-reference__heading">
+                    <h2 id="reference-title">The six container query units</h2>
+                    <p>Each unit represents one percent of a dimension of the nearest eligible query container.</p>
+                </div>
+                <div class="unit-grid">
+                    <article><code>cqw</code><h3>Query width</h3><p>1% of the container’s width.</p></article>
+                    <article><code>cqh</code><h3>Query height</h3><p>1% of the container’s height.</p></article>
+                    <article><code>cqi</code><h3>Inline size</h3><p>1% of the container’s inline axis.</p></article>
+                    <article><code>cqb</code><h3>Block size</h3><p>1% of the container’s block axis.</p></article>
+                    <article><code>cqmin</code><h3>Smaller axis</h3><p>1% of the smaller container dimension.</p></article>
+                    <article><code>cqmax</code><h3>Larger axis</h3><p>1% of the larger container dimension.</p></article>
+                </div>
+            </section>
+
+            <section class="recipe" aria-labelledby="recipe-title">
+                <ol>
+                    <li><strong>Declare a container:</strong> <code>container-type: size;</code> enables both axes. Use <code>inline-size</code> when you only need the inline axis.</li>
+                    <li><strong>Choose the right unit:</strong> use <code>cqi</code> for writing-mode-aware inline sizing, or <code>cqw</code>/<code>cqh</code> when you need physical width and height.</li>
+                    <li><strong>Combine with guardrails:</strong> <code>clamp()</code> keeps a value readable even when the component becomes very small or very large.</li>
+                </ol>
+            </section>
+        </main>
+        <script type="module" src="cq-units-demo.js"></script>
+    </body>
+</html>
