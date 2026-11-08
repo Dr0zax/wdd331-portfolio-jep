@@ -1,0 +1,97 @@
+.sticky-demo-page {
+    background: var(--color-bg);
+}
+
+.sticky-demo-page > header,
+.reading-layout {
+    width: min(100% - 2rem, 1200px);
+    margin-inline: auto;
+}
+
+.sticky-demo-page > header {
+    padding-block: var(--space-xl) var(--space-2xl);
+}
+
+.sticky-demo-page > header h1 {
+    max-width: 18ch;
+    margin-block: var(--space-md) var(--space-sm);
+    color: var(--color-text);
+}
+
+.reading-layout {
+    display: grid;
+    grid-template-columns: minmax(11rem, 0.4fr) minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(var(--space-lg), 6vw, 5rem);
+    padding-block: 0 var(--space-2xl);
+}
+
+.table-of-contents {
+    position: sticky;
+    top: 1rem;
+    align-self: start;
+    padding: var(--space-md);
+    background: var(--color-surface);
+}
+
+.table-of-contents nav {
+    display: grid;
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+}
+
+.table-of-contents a {
+    color: var(--color-link);
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+}
+
+/*
+ The first draft used overflow: hidden on .reading-layout to clip a decorative
+ panel edge. That ancestor sat between this sticky element and the scroll
+ container, so sticky stopped working. The clipping effect is unnecessary
+ here, so the overflow rule was removed and the visual treatment is provided
+ by the border and background instead.
+ */
+
+.reading-content {
+    min-width: 0;
+}
+
+.reading-content section {
+    min-height: 70vh;
+    margin-bottom: 5rem;
+}
+
+.reading-content section:last-child {
+    border-block-end: 0;
+}
+
+.reading-content h2 {
+    max-width: 18ch;
+    margin-block: var(--space-sm) var(--space-lg);
+    color: var(--color-text);
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.reading-content p:not(.eyebrow) {
+    max-width: 65ch;
+    margin-block-end: var(--space-md);
+    font-size: var(--font-size-lg);
+    line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+    .reading-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .table-of-contents {
+        position: static;
+    }
+
+    .table-of-contents nav {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

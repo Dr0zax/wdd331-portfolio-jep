@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Sticky Table of Contents Demo</title>
+        <script type="module" src="../../js/theme-preferences.js"></script>
+        <link rel="stylesheet" href="../../css/main.css" />
+        <link rel="stylesheet" href="sticky-demo.css" />
+    </head>
+    <body class="sticky-demo-page">
+        <header class="site-header">
+            <a href="../../index.html">&larr; Home</a>
+            <h1>How Layout Contexts Shape Components</h1>
+            <p>A long-form reading page with a table of contents that follows along.</p>
+        </header>
+
+        <main class="reading-layout">
+            <aside class="table-of-contents" aria-label="Table of contents">
+                <nav>
+                    <a href="#context">Context</a>
+                    <a href="#containers">Containers</a>
+                    <a href="#sticky">Sticky positioning</a>
+                    <a href="#takeaways">Takeaways</a>
+                </nav>
+            </aside>
+
+            <article class="reading-content">
+                <section id="context">
+                    <h2>Good components read their surroundings</h2>
+                    <p>A component can be perfectly designed in isolation and still feel wrong when it lands in a new part of a page. A sidebar, a dashboard panel, and a full-width feature area each offer different amounts of room.</p>
+                    <p>Modern CSS gives components tools for responding to that room. Instead of making every parent know the component's internal breakpoints, we can let the component adapt to the context in which it is placed.</p>
+                    <p>That shift keeps layout decisions close to the component while allowing the page to remain responsible for the larger composition.</p>
+                </section>
+
+                <section id="containers">
+                    <h2>Design for the space you actually have</h2>
+                    <p>Container queries make a component's available inline size part of its design input. A card may stack its media and copy in a narrow rail, then place them side by side when the same card receives more room.</p>
+                    <p>The important detail is that the query belongs to the component's containment context, not necessarily to the viewport. This makes repeated UI patterns more portable and reduces the number of page-specific overrides.</p>
+                    <p>Pairing container queries with intrinsic sizing creates layouts that remain useful between the familiar device-width breakpoints.</p>
+                </section>
+
+                <section id="sticky">
+                    <h2>Keep useful orientation within reach</h2>
+                    <p>A table of contents is most useful when it remains available while the reader moves through a long article. Sticky positioning gives it that behavior without taking it out of the document's normal flow.</p>
+                    <p>Unlike fixed positioning, a sticky element stays associated with its section and stops when its containing block ends. That makes it a natural fit for a local navigation rail.</p>
+                    <p>The offset is essential: <code>top: 1rem</code> tells the browser where the element should settle as it reaches the top edge of the scrollport.</p>
+                    <p>Sticky positioning can be quietly disabled when an ancestor establishes an unexpected scrolling context with an overflow value. Check the ancestor chain whenever a sticky element appears to behave like a normal-flow element.</p>
+                </section>
+
+                <section id="takeaways">
+                    <h2>Let each layer own the right decision</h2>
+                    <p>The page controls the broad reading layout, the component responds to its container, and the table of contents stays useful through the article's scroll. Each layer has a focused responsibility.</p>
+                    <p>When a layout feature fails, inspect the context around it before changing the feature itself. A small ancestor rule can be the difference between a robust interaction and one that silently does nothing.</p>
+                    <p>These techniques work together: meaningful containment makes components reusable, and careful overflow choices preserve the browser's normal scrolling behavior.</p>
+                </section>
+            </article>
+        </main>
+    </body>
+</html>

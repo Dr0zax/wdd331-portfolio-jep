@@ -38,6 +38,7 @@ main > p + p {
     border-radius: var(--radius-lg);
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: var(--space-lg);
     margin-top: var(--space-lg);
     padding: clamp(1.5rem, 4vw, 3rem);

@@ -25,14 +25,17 @@
 .articles-page .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    grid-template-rows: 10rem 1fr;
+    grid-auto-rows: 10rem 1fr;
     gap: var(--space-lg);
     padding-block: var(--space-lg) var(--space-2xl);
 }
 
 .articles-page .card {
-    display: flex;
+    display: grid;
+    grid-row: span 2;
+    grid-template-rows: subgrid;
     min-width: 0;
-    flex-direction: column;
     overflow: hidden;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
@@ -41,7 +44,6 @@
 }
 
 .articles-page .card > div:first-child {
-    flex: 0 0 10rem;
     background: var(--color-link);
 }
 
