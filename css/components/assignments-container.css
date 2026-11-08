@@ -5,11 +5,14 @@
     
     ul {
         display: grid;
+        grid-template-rows: repeat(4, auto);
+        grid-auto-flow: column;
         gap: var(--space-sm);
         list-style: none;
     }
-    
+
     li {
+        max-width: 10rem;
         border-top: 1px solid var(--color-border);
     }
     

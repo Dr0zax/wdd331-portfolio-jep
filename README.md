@@ -37,7 +37,8 @@ The site is deployed automatically to GitHub Pages when changes are pushed to `m
 │   └── visual-effects/                # Visual effects showcase
 ├── unit-4/
 │   ├── grid-layouts/                  # Editorial and card grid layouts
-│   └── display-contents/              # display: contents demonstration
+│   ├── display-contents/              # display: contents demonstration
+│   └── advanced/                      # Container query and sticky demos
 ├── postcss.config.cjs                 # PostCSS plugin configuration
 ├── package.json                       # Project metadata and scripts
 ├── pnpm-lock.yaml                     # Locked dependency versions
@@ -68,6 +69,8 @@ Each assignment folder is self-contained. The root portfolio page uses the share
 - [Editorial Grid Layout](unit-4/grid-layouts/editorial.html) · [Live page](https://dr0zax.github.io/wdd331-portfolio-jep/unit-4/grid-layouts/editorial.html)
 - [Card Grid Layout](unit-4/grid-layouts/cards.html) · [Live page](https://dr0zax.github.io/wdd331-portfolio-jep/unit-4/grid-layouts/cards.html)
 - [Display: Contents](unit-4/display-contents/index.html) · [Live page](https://dr0zax.github.io/wdd331-portfolio-jep/unit-4/display-contents/index.html)
+- [Container Queries](unit-4/advanced/container-demo.html) · [Live page](https://dr0zax.github.io/wdd331-portfolio-jep/unit-4/advanced/container-demo.html)
+- [Sticky Positioning](unit-4/advanced/sticky-demo.html) · [Live page](https://dr0zax.github.io/wdd331-portfolio-jep/unit-4/advanced/sticky-demo.html)
 
 ## CSS architecture
 

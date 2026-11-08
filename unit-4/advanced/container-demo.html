@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Container Query Demo</title>
+        <script type="module" src="../../js/theme-preferences.js"></script>
+        <link rel="stylesheet" href="../../css/main.css" />
+        <link rel="stylesheet" href="container-demo.css" />
+    </head>
+    <body class="container-demo-page">
+        <header class="site-header">
+            <a href="../../index.html">&larr; Home</a>
+            <h1>Container Query Cards</h1>
+            <p>The same component adapts to the space around it.</p>
+            <details class="theme-menu">
+                <summary class="theme-control">
+                    <span class="visually-hidden">Color scheme</span>
+                </summary>
+                <div class="theme-extra" role="group" aria-label="Choose color scheme">
+                    <label class="theme-control theme-pick" data-theme-pick="light">
+                        <input name="theme-preference" type="radio" value="light" />
+                        <span aria-hidden="true">☀️</span>
+                        <span class="visually-hidden">Light</span>
+                    </label>
+                    <label class="theme-control theme-pick" data-theme-pick="system">
+                        <input name="theme-preference" type="radio" value="system" checked />
+                        <span aria-hidden="true">⚙️</span>
+                        <span class="visually-hidden">System default</span>
+                    </label>
+                    <label class="theme-control theme-pick" data-theme-pick="dark">
+                        <input name="theme-preference" type="radio" value="dark" />
+                        <span aria-hidden="true">🌒</span>
+                        <span class="visually-hidden">Dark</span>
+                    </label>
+                </div>
+            </details>
+        </header>
+
+        <main class="context-layout">
+            <section class="context-panel context-panel--narrow" aria-labelledby="narrow-heading">
+                <p class="eyebrow">Narrow context</p>
+                <h2 id="narrow-heading">Sidebar</h2>
+                <div class="component-container">
+                    <article class="feature-card">
+                        <div class="feature-card__media" aria-hidden="true">CSS</div>
+                        <div class="feature-card__body">
+                            <p class="eyebrow">Layout guide</p>
+                            <h3>Design with context</h3>
+                            <p>Container queries let a component respond to its own available space.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="context-panel context-panel--wide" id="wide-context" aria-labelledby="wide-heading">
+                <p class="eyebrow">Wide context</p>
+                <h2 id="wide-heading">Main content</h2>
+                <div class="component-container">
+                    <article class="feature-card">
+                        <div class="feature-card__media" aria-hidden="true">CSS</div>
+                        <div class="feature-card__body">
+                            <p class="eyebrow">Layout guide</p>
+                            <h3>Design with context</h3>
+                            <p>Container queries let a component respond to its own available space.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,100 @@
+.container-demo-page {
+    background: var(--color-bg);
+}
+
+.container-demo-page > header,
+.context-layout {
+    width: min(100% - 2rem, 1500px);
+    margin-inline: auto;
+}
+
+.container-demo-page > header {
+    padding-block: var(--space-xl);
+}
+
+.container-demo-page > header h1 {
+    margin-block: var(--space-md) var(--space-sm);
+    color: var(--color-text);
+}
+
+.context-layout {
+    display: grid;
+    grid-template-columns: minmax(13rem, 0.7fr) minmax(0, 1.8fr);
+    gap: var(--space-lg);
+    padding-block: var(--space-lg) var(--space-2xl);
+}
+
+.context-panel {
+    min-width: 0;
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+}
+
+.context-panel h2 {
+    margin-block: var(--space-xs) var(--space-md);
+    color: var(--color-text);
+}
+
+.component-container {
+    container-type: inline-size;
+    container-name: feature-card;
+}
+
+.feature-card {
+    display: grid;
+    gap: var(--space-md);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-bg);
+    box-shadow: var(--shadow-card-subtle);
+}
+
+.feature-card__media {
+    display: grid;
+    min-height: 9rem;
+    place-items: center;
+    background: var(--color-link);
+    color: var(--color-bg);
+    font-family: var(--font-family-mono);
+    font-size: clamp(2rem, 8cqi, 4rem);
+    font-weight: 700;
+}
+
+.feature-card__body {
+    display: grid;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+}
+
+.feature-card h3 {
+    color: var(--color-text);
+    font-size: clamp(1.5rem, 4cqi, 2.4rem);
+}
+
+.feature-card a {
+    margin-top: var(--space-sm);
+    color: var(--color-link);
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+}
+
+@container feature-card (min-width: 34rem) {
+    .feature-card {
+        grid-template-columns: minmax(10rem, 0.8fr) minmax(0, 1.2fr);
+        align-items: stretch;
+    }
+
+    .feature-card__media {
+        min-height: 15rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .context-layout {
+        grid-template-columns: 1fr;
+    }
+}
