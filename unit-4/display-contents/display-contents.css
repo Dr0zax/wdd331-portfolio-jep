@@ -141,7 +141,7 @@
 .story-card h3 {
     /* margin-top: auto; */
     color: var(--color-text);
-    font-family: var(--font-display);
+    font-family: var(--font-family-heading);
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 400;
 }
@@ -152,7 +152,7 @@
 }
 
 .tip-card p:last-child {
-    font-family: var(--font-display);
+    font-family: var(--font-family-heading);
     font-size: clamp(1.8rem, 3vw, 2.7rem);
     line-height: 1.15;
 }
