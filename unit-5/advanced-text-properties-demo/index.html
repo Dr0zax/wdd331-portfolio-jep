@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="Interactive teaching demo for advanced CSS text properties and font-relative units."
+        />
+        <title>Advanced Text Properties Demo</title>
+        <script type="module" src="../../js/theme-preferences.js"></script>
+        <link rel="stylesheet" href="../../css/main.css" />
+        <link rel="stylesheet" href="styles.css" />
+        <script type="module" src="script.js"></script>
+    </head>
+    <body>
+        <header class="site-header">
+            <details class="theme-menu">
+                <summary class="theme-control">
+                    <span class="visually-hidden">Color scheme</span>
+                </summary>
+                <div
+                    class="theme-extra"
+                    role="group"
+                    aria-label="Choose color scheme"
+                >
+                    <label
+                        class="theme-control theme-pick"
+                        data-theme-pick="light"
+                    >
+                        <input
+                            name="theme-preference"
+                            type="radio"
+                            value="light"
+                        />
+                        <span aria-hidden="true">&#9788;&#65039;</span
+                        ><span class="visually-hidden">Light</span>
+                    </label>
+                    <label
+                        class="theme-control theme-pick"
+                        data-theme-pick="system"
+                    >
+                        <input
+                            name="theme-preference"
+                            type="radio"
+                            value="system"
+                            checked
+                        />
+                        <span aria-hidden="true">&#9881;&#65039;</span
+                        ><span class="visually-hidden">System default</span>
+                    </label>
+                    <label
+                        class="theme-control theme-pick"
+                        data-theme-pick="dark"
+                    >
+                        <input
+                            name="theme-preference"
+                            type="radio"
+                            value="dark"
+                        />
+                        <span aria-hidden="true">&#127766;</span
+                        ><span class="visually-hidden">Dark</span>
+                    </label>
+                </div>
+            </details>
+            <div class="header-inner">
+                <a href="../../index.html">&larr; Home</a>
+                <h1>Advanced text properties</h1>
+            </div>
+        </header>
+
+        <main class="page-shell">
+            <section
+                class="demo-grid"
+                aria-label="Interactive CSS demonstrations"
+            >
+                <article class="demo-card wrap-card">
+                    <div class="card-heading">
+                        <div>
+                            <h2><code>text-wrap</code></h2>
+                        </div>
+                    </div>
+                    <p class="explanation">
+                        Use <code>balance</code> for short headings and
+                        <code>pretty</code> for longer copy. Compare each value
+                        with normal greedy wrapping.
+                    </p>
+                    <div
+                        class="control-row"
+                        role="group"
+                        aria-label="Text wrap mode"
+                    >
+                        <button
+                            class="mode-button is-active"
+                            data-wrap="balance"
+                        >
+                            balance
+                        </button>
+                        <button class="mode-button" data-wrap="pretty">
+                            pretty
+                        </button>
+                        <button class="mode-button" data-wrap="wrap">
+                            wrap
+                        </button>
+                    </div>
+                    <div class="stage wrap-stage">
+                        <p class="stage-label">Live heading</p>
+                        <h3 id="wrap-heading">
+                            A good headline gives every line room to breathe
+                        </h3>
+                    </div>
+                    <pre><code>h3 {
+  text-wrap: <span id="wrap-code">balance</span>;
+}</code></pre>
+                    <p class="support-note">
+                        Best for short text: balancing is intentionally limited
+                        to a small number of lines.
+                    </p>
+                </article>
+
+                <article class="demo-card drop-cap-card">
+                    <div class="card-heading">
+                        <div>
+                            <h2><code>initial-letter</code></h2>
+                        </div>
+                    </div>
+                    <p class="explanation">
+                        A drop cap can now be declared instead of faked with a
+                        floated span. The number describes how many lines tall
+                        the first letter is.
+                    </p>
+                    <div class="control-row">
+                        <label for="drop-lines"
+                            >Lines tall
+                            <output id="drop-output">3</output></label
+                        ><input
+                            id="drop-lines"
+                            type="range"
+                            min="1"
+                            max="4"
+                            value="3"
+                        />
+                    </div>
+                    <div class="stage article-stage">
+                        <p id="drop-copy">
+                            Typography is the quiet structure behind a
+                            comfortable reading experience. A carefully sized
+                            first letter creates an editorial entrance without
+                            changing the meaning or markup of the paragraph.
+                        </p>
+                    </div>
+                    <pre><code>p::first-letter {
+  initial-letter: <span id="drop-code">3</span>;
+}</code></pre>
+                    <p class="support-note">
+                        Include <code>-webkit-initial-letter</code> as a Safari
+                        fallback and keep the paragraph readable without it.
+                    </p>
+                </article>
+
+                <article class="demo-card clamp-card">
+                    <div class="card-heading">
+                        <div>
+                            <h2>Line clamping</h2>
+                        </div>
+                    </div>
+                    <p class="explanation">
+                        The familiar four-declaration pattern gives cards a
+                        predictable description height while preserving an
+                        ellipsis.
+                    </p>
+                    <div class="control-row">
+                        <label for="clamp-lines"
+                            >Visible lines
+                            <output id="clamp-output">3</output></label
+                        ><input
+                            id="clamp-lines"
+                            type="range"
+                            min="2"
+                            max="5"
+                            value="3"
+                        />
+                    </div>
+                    <div class="stage trail-card">
+                        <p class="stage-label">Featured trail</p>
+                        <h3>Mountain Ridge Trail</h3>
+                        <p id="clamp-copy">
+                            A demanding ascent that rewards hikers with sweeping
+                            views across three valleys. The trail climbs
+                            steadily through pine forest before breaking above
+                            the treeline, where exposed granite switchbacks lead
+                            to a windswept summit. Bring layers, plenty of
+                            water, and start early to beat the afternoon
+                            weather.
+                        </p>
+                    </div>
+                    <pre><code>.description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: <span id="clamp-code">3</span>;
+  overflow: hidden;
+}</code></pre>
+                </article>
+
+                <article class="demo-card measure-card">
+                    <div class="card-heading">
+                        <div>
+                            <h2><code>ch</code> and <code>ex</code></h2>
+                        </div>
+                    </div>
+                    <p class="explanation">
+                        <code>ch</code> approximates the width of a zero
+                        character, making it useful for readable line length.
+                        <code>ex</code> follows the x-height of the current
+                        font.
+                    </p>
+                    <div class="control-row">
+                        <label for="measure-width"
+                            >Measure
+                            <output id="measure-output">65ch</output></label
+                        ><input
+                            id="measure-width"
+                            type="range"
+                            min="35"
+                            max="85"
+                            value="65"
+                        />
+                    </div>
+                    <div class="stage measure-stage">
+                        <p id="measure-copy">
+                            Good typography is invisible. When the measure is
+                            right, the reader's eye moves from the end of one
+                            line to the start of the next without effort or
+                            thought, and the words simply flow.
+                        </p>
+                        <span class="x-height-demo"
+                            ><span class="icon-dot" aria-hidden="true"></span>
+                            icon aligned to <code>1ex</code></span
+                        >
+                        <p class="verdict" id="measure-verdict">
+                            65ch is in the comfortable 45–75 range.
+                        </p>
+                    </div>
+                    <pre><code>article p {
+  max-width: <span id="measure-code">65</span>ch;
+}
+.icon { height: 1ex; }</code></pre>
+                </article>
+
+                <article class="demo-card rhythm-card">
+                    <div class="card-heading">
+                        <div>
+                            <h2><code>lh</code> and <code>rlh</code></h2>
+                        </div>
+                    </div>
+                    <p class="explanation">
+                        <code>lh</code> is the current element’s computed line
+                        height. <code>rlh</code> uses the root line height,
+                        creating one shared rhythm across components.
+                    </p>
+                    <div class="control-row">
+                        <label for="rhythm-size"
+                            >Root rhythm
+                            <output id="rhythm-output">1.5rem</output></label
+                        ><input
+                            id="rhythm-size"
+                            type="range"
+                            min="1.2"
+                            max="2"
+                            value="1.5"
+                            step="0.1"
+                        />
+                    </div>
+                    <div class="stage rhythm-stage">
+                        <h3>One rhythm, many blocks</h3>
+                        <p>
+                            Each paragraph ends with <code>1lh</code> of space.
+                            The heading starts after <code>2rlh</code>, so the
+                            stack remains orderly as the root rhythm changes.
+                        </p>
+                        <p>
+                            Try the slider: the spacing grows with the type
+                            instead of relying on a guessed pixel value.
+                        </p>
+                    </div>
+                    <pre><code>p { margin-block-end: 1lh; }
+h2 { margin-block-start: 2rlh; }</code></pre>
+                </article>
+            </section>
+        </main>
+    </body>
+</html>
