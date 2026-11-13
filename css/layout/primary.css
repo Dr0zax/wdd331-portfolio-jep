@@ -14,13 +14,13 @@ main > h1 {
 }
 
 main > p {
-    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    font-size: clamp(var(--font-size-sm), 2vw, var(--font-size-md));
     margin-top: -1.25rem;
 }
 
 main > p + p {
     color: var(--color-text);
-    font-size: 1rem;
+    font-size: var(--font-size-sm);
     margin-top: -2.25rem;
     max-width: 32rem;
 }
