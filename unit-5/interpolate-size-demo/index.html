@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="Interactive demonstration of CSS interpolate-size and intrinsic size transitions."
+        />
+        <title>Interpolate Size Demo</title>
+        <script type="module" src="../../js/theme-preferences.js"></script>
+        <link rel="stylesheet" href="../../css/main.css" />
+        <link rel="stylesheet" href="styles.css" />
+        <script type="module" src="script.js"></script>
+    </head>
+    <body>
+        <header class="site-header">
+            <details class="theme-menu">
+                <summary class="theme-control">
+                    <span class="visually-hidden">Color scheme</span>
+                </summary>
+                <div class="theme-extra" role="group" aria-label="Choose color scheme">
+                    <label class="theme-control theme-pick" data-theme-pick="light">
+                        <input name="theme-preference" type="radio" value="light" />
+                        <span aria-hidden="true">☀️</span><span class="visually-hidden">Light</span>
+                    </label>
+                    <label class="theme-control theme-pick" data-theme-pick="system">
+                        <input name="theme-preference" type="radio" value="system" checked />
+                        <span aria-hidden="true">⚙️</span><span class="visually-hidden">System default</span>
+                    </label>
+                    <label class="theme-control theme-pick" data-theme-pick="dark">
+                        <input name="theme-preference" type="radio" value="dark" />
+                        <span aria-hidden="true">🌒</span><span class="visually-hidden">Dark</span>
+                    </label>
+                </div>
+            </details>
+            <div class="header-inner">
+                <a href="../../index.html">← Home</a>
+                <h1>Let content choose its size.</h1>
+            </div>
+        </header>
+
+        <main class="page-shell">
+            <section class="intro panel">
+                <div>
+                    <h2>Why does <code>height: auto</code> usually snap?</h2>
+                    <p>
+                        CSS can transition between two numeric lengths, but <code>auto</code> is calculated from the content. The browser has no numeric midpoint to use, unless we opt in to intrinsic-size interpolation.
+                    </p>
+                </div>
+                <div class="tip">
+                    <span>Set <code>interpolate-size: allow-keywords</code> on the root or the component that needs it.</span>
+                </div>
+            </section>
+
+            <section class="demo-grid" aria-label="Interpolate size demonstrations">
+                <article class="demo-card comparison-card">
+                    <div class="card-heading">
+                        <div>
+                            <h2>interpolate-size: allow-keywords</h2>
+                        </div>
+                    </div>
+                    <div class="comparison-grid">
+                        <div class="comparison-column">
+                            <p class="column-label"><span class="status-dot no-motion"></span> Default</p>
+                            <button class="reveal-card" data-demo="default" aria-expanded="false" aria-controls="default-panel">
+                                <span>Open the details</span><span class="chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="reveal-panel" id="default-panel" hidden>
+                                <p>This panel has the same fixed starting height and content as the enhanced example, but its intrinsic end state cannot be interpolated.</p>
+                                <ul><li>height: 2.9rem → auto</li><li>transition: height 700ms</li></ul>
+                            </div>
+                        </div>
+                        <div class="comparison-column enhanced-column">
+                            <p class="column-label"><span class="status-dot motion"></span> <code>allow-keywords</code></p>
+                            <button class="reveal-card" data-demo="enhanced" aria-expanded="false" aria-controls="enhanced-panel">
+                                <span>Open the details</span><span class="chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="reveal-panel" id="enhanced-panel" hidden>
+                                <p>This is the same pattern, now with <code>interpolate-size: allow-keywords</code> inherited from the demo wrapper.</p>
+                                <ul><li>height: 2.9rem → auto</li><li>transition: height 700ms</li></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <pre><code>.demo {
+  interpolate-size: allow-keywords;
+  height: 2.9rem;
+  transition: height 700ms ease;
+}
+.demo[open] { height: auto; }</code></pre>
+                </article>
+
+                <article class="demo-card control-card">
+                    <div class="card-heading">
+                        <div>
+                            <h2>Intrinsic sizing, in plain language</h2>
+                        </div>
+                    </div>
+                    <label class="range-label" for="duration">Transition duration <output id="duration-output">700ms</output></label>
+                    <input id="duration" type="range" min="200" max="1600" value="700" step="100" />
+                    <div class="inspector-stage">
+                        <div class="mini-card" id="mini-card">
+                            <button class="mini-trigger" id="mini-trigger" aria-expanded="false" aria-controls="mini-panel">
+                                <span>What is intrinsic size?</span><span class="chevron" aria-hidden="true">⌄</span>
+                            </button>
+                            <div class="mini-panel" id="mini-panel" hidden>
+                                <p>It is a size calculated from the content itself: <code>auto</code>, <code>min-content</code>, <code>max-content</code>, or <code>fit-content</code>.</p>
+                            </div>
+                        </div>
+                        <p class="support-note" id="support-note">Checking browser support…</p>
+                    </div>
+                    <pre><code>:root {
+  interpolate-size: allow-keywords;
+}
+
+.panel {
+  height: 2.9rem;
+  overflow: hidden;
+  transition: height var(--duration) ease;
+}
+.panel.is-open { height: auto; }</code></pre>
+                </article>
+            </section>
+        </main>
+    </body>
+</html>
