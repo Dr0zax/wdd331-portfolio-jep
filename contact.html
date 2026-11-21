@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Contact Andrew Jeppesen about software engineering, web development, and collaboration." />
+        <title>Andrew Jeppesen | Contact</title>
+        <script type="module" src="js/theme-preferences.js"></script>
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+    <body class="contact-page">
+        <header class="site-header">
+            <nav aria-label="Primary navigation">
+                <a href="index.html">Home</a>
+                <a href="resume.html">Resume</a>
+                <a class="nav-current" href="contact.html" aria-current="page">Contact</a>
+            </nav>
+            <details class="theme-menu">
+                <summary class="theme-control">
+                    <span class="visually-hidden">Color scheme</span>
+                </summary>
+                <div class="theme-extra" role="group" aria-label="Choose color scheme">
+                    <label class="theme-control theme-pick" data-theme-pick="light">
+                        <input name="theme-preference" type="radio" value="light" />
+                        <span aria-hidden="true">&#9788;&#65039;</span>
+                        <span class="visually-hidden">Light</span>
+                    </label>
+                    <label class="theme-control theme-pick" data-theme-pick="system">
+                        <input name="theme-preference" type="radio" value="system" checked />
+                        <span aria-hidden="true">&#9881;&#65039;</span>
+                        <span class="visually-hidden">System default</span>
+                    </label>
+                    <label class="theme-control theme-pick" data-theme-pick="dark">
+                        <input name="theme-preference" type="radio" value="dark" />
+                        <span aria-hidden="true">&#127766;</span>
+                        <span class="visually-hidden">Dark</span>
+                    </label>
+                </div>
+            </details>
+        </header>
+
+        <main class="contact-shell">
+            <section class="contact-intro" aria-labelledby="contact-title">
+                <h1 id="contact-title">Contact Me</h1>
+            </section>
+
+            <div class="contact-grid">
+                <aside class="contact-details" aria-labelledby="details-title">
+                    <div>
+                        <h2 id="details-title">Contact details</h2>
+                    </div>
+                    <ul class="contact-list">
+                        <li><span class="contact-label">Email</span><a href="mailto:agjep4@hotmail.com">agjep4@hotmail.com</a></li>
+                        <li><span class="contact-label">Phone</span><a href="tel:+12083606798">208 360 6798</a></li>
+                        <li><span class="contact-label">Based in</span><span>Rexburg, Idaho</span></li>
+                    </ul>
+                    <div class="contact-socials">
+                        <a href="https://linkedin.com/in/andrew-jeppesen">LinkedIn <span aria-hidden="true">&#8599;</span></a>
+                        <a href="https://github.com/Dr0zax">GitHub <span aria-hidden="true">&#8599;</span></a>
+                    </div>
+                </aside>
+
+                <form class="contact-form" action="mailto:agjep4@hotmail.com" method="post" enctype="text/plain">
+                    <div class="form-field">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" autocomplete="name" required />
+                    </div>
+                    <div class="form-field">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" autocomplete="email" required />
+                    </div>
+                    <div class="form-field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit">Send message <span aria-hidden="true">&#8594;</span></button>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>
