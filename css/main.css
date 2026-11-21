@@ -10,6 +10,8 @@
 
 @import url('components/effects.css') layer(components);
 @import url('components/assignments-container.css') layer(components);
+@import url('components/resume.css') layer(components);
+@import url('components/contact.css') layer(components);
 @import url('components/theme-toggle.css') layer(components);
 
 @import url('utilities/utilities.css') layer(utilities);
